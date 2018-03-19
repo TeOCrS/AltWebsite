@@ -1,5 +1,4 @@
-﻿using System.Web;
-using System.Web.Optimization;
+﻿using System.Web.Optimization;
 
 namespace AltWebsite
 {
@@ -26,6 +25,14 @@ namespace AltWebsite
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/alt-website-scripts").Include(
+                "~/Scripts/alt-website.js"
+                ));
+
+            bundles.Add(new StyleBundle("~/bundles/alt-website-style").Include(
+                "~/Content/alt-website.css"
+                ));
         }
     }
 }

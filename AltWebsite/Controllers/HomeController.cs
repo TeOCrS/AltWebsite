@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AltWebsite.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,16 +9,21 @@ namespace AltWebsite.Controllers
 {
     public class HomeController : Controller
     {
+        private AltWebsiteDb _db = new AltWebsiteDb();
+
         public ActionResult Index()
         {
-            return View();
+            var model = _db.Tourists.ToList();
+
+            var info = _db.TouristInfos.ToList();
+            return View(info);
         }
 
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
 
-            return View();
+           return View();
         }
 
         public ActionResult Contact()
@@ -25,6 +31,16 @@ namespace AltWebsite.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (_db != null)
+            {
+                _db.Dispose();
+            }
+
+            base.Dispose(disposing);
         }
     }
 }
