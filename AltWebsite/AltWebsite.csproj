@@ -152,12 +152,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201803191312169_InitialCreate.cs" />
-    <Compile Include="Migrations\201803191312169_InitialCreate.Designer.cs">
-      <DependentUpon>201803191312169_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AltWebsiteDb.cs" />
+    <Compile Include="Models\AltWebsiteInitializer.cs" />
     <Compile Include="Models\Booking.cs" />
     <Compile Include="Models\ComingFromWebsite.cs" />
     <Compile Include="Models\Payment.cs" />
@@ -222,11 +218,6 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201803191312169_InitialCreate.resx">
-      <DependentUpon>201803191312169_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

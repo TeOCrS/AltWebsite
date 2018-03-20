@@ -1,5 +1,5 @@
 ﻿@using AltWebsite.Models;
-@model IEnumerable<TouristInfo>
+@model IEnumerable<Tourist>
 @{
     ViewBag.Title = "Home Page";
 }
@@ -7,7 +7,14 @@
 @foreach (var item in Model)
 {
     <div>
+
         <h4>@item.TouristInfo.FirstName</h4>
         <div>@item.TouristInfo.Country</div>
+        @foreach (var book in item.Bookings)
+        {
+            <div>
+                @book.StartDate
+            </div>
+        }
     </div>
 }

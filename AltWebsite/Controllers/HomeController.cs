@@ -1,6 +1,7 @@
 ﻿using AltWebsite.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -13,9 +14,7 @@ namespace AltWebsite.Controllers
 
         public ActionResult Index()
         {
-            var model = _db.Tourists.ToList();
-
-            var info = _db.TouristInfos.ToList();
+            var info = _db.Tourists.ToList();
             return View(info);
         }
 
