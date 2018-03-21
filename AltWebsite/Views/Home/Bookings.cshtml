@@ -1,0 +1,68 @@
+﻿@model AltWebsite.Models.Tourist
+
+@{
+    ViewBag.Title = "Bookings";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Bookings</h2>
+
+<div>
+    <h4>Tourist</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TouristInfo.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TouristInfo.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Comments)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Comments)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Review)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Review)
+        </dd>
+
+        @foreach (var item in Model.Bookings)
+        {
+            <dt>
+                @Html.DisplayNameFor(modelItem => item.StartDate)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(modelItem => item.StartDate)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(modelItem => item.EndDate)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(modelItem => item.EndDate)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(modelItem => item.Payment.PricePerDay)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(modelItem => item.Payment.PricePerDay)
+            </dd>
+
+        }
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
