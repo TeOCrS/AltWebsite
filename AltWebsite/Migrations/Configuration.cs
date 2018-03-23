@@ -1,12 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace AltWebsite.Models
+namespace AltWebsite.Migrations
 {
-    public class AltWebsiteInitializer : System.Data.Entity.DropCreateDatabaseAlways<AltWebsiteDb>
+    using AltWebsite.Models;
+    using System;
+    using System.Collections.Generic;
+    using System.Data.Entity;
+    using System.Data.Entity.Migrations;
+    using System.Linq;
+
+    internal sealed class Configuration : DbMigrationsConfiguration<AltWebsite.Models.AltWebsiteDb>
     {
-        protected override void Seed(AltWebsiteDb context)
+        public Configuration()
         {
+            AutomaticMigrationsEnabled = true;
+        }
+
+        protected override void Seed(AltWebsite.Models.AltWebsiteDb context)
+        {
+            //  This method will be called after migrating to the latest version.
+
+            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
+            //  to avoid creating duplicate seed data.
+
             var tourists = new List<Tourist>()
             {
                 new Tourist()
@@ -30,7 +44,8 @@ namespace AltWebsite.Models
                      PreferedLanguage = "German"
                 }
             };
-            context.Tourists.AddRange(tourists);
+
+            context.Tourists.AddOrUpdate(tourists.ToArray());
             context.SaveChanges();
 
             var payments = new List<Payment>()
@@ -58,7 +73,7 @@ namespace AltWebsite.Models
                 }
             };
 
-            context.Payments.AddRange(payments);
+            context.Payments.AddOrUpdate(payments.ToArray());
             context.SaveChanges();
 
             var bookings = new List<Booking>()
@@ -90,7 +105,7 @@ namespace AltWebsite.Models
                     TouristId = 2
                 }
         };
-            context.Bookings.AddRange(bookings);
+            context.Bookings.AddOrUpdate(bookings.ToArray());
             context.SaveChanges();
         }
     }

@@ -8,11 +8,11 @@
 {
     <div>
 
-        <h4>@item.TouristInfo.FirstName</h4>
-        <div>@item.TouristInfo.Country</div>
+        <h4>@item.FirstName</h4>
+        <div>@item.Country</div>
         <div>@item.Comments</div>
         <div>@item.Review</div>
-        @Html.ActionLink("Bookings", "Bookings", new { Id = item.TouristInfoId })
+        @Html.ActionLink("Bookings", "Bookings", new { Id = item.Id })
         @Html.ActionLink("Edit Tourist", "Edit", new { Id = item.Id })
         @Html.ActionLink("Delete", "Delete", new { Id = item.Id })
     </div>

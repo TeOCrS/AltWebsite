@@ -16,7 +16,6 @@ namespace AltWebsite.Models
         }
 
         public DbSet<Tourist> Tourists { get; set; }
-        public DbSet<TouristInfo> TouristInfos { get; set; }
         public DbSet<Booking> Bookings { get; set; }
         public DbSet<Payment> Payments { get; set; }
 

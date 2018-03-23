@@ -41,7 +41,6 @@ namespace AltWebsite.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    tourist.TouristInfoId = 1;
                     _db.Tourists.Add(tourist);
                     _db.SaveChanges();
                     return RedirectToAction("Index");

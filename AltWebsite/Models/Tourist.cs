@@ -8,10 +8,13 @@ namespace AltWebsite.Models
     public class Tourist
     {
         public int Id { get; set; }
-        public int TouristInfoId { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Country { get; set; }
+        public string PreferedLanguage { get; set; }
+        public string EmailAddress { get; set; }
         public string Comments { get; set; }
         public string Review { get; set; }
-        public virtual TouristInfo TouristInfo { get; set; }
         public virtual List<Booking> Bookings { get; set; }
 
     }
