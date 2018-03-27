@@ -7,13 +7,13 @@ using System.Web.Mvc;
 
 namespace AltWebsite.Controllers
 {
-    public class HomeController : Controller
+    public class BookingController : Controller
     {
         private AltWebsiteDb _db = new AltWebsiteDb();
 
         public ActionResult Index()
         {
-            var info = _db.Tourists.ToList();
+            var info = _db.Bookings.ToList();
             return View(info);
         }
 

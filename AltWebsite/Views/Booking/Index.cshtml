@@ -1,0 +1,62 @@
+﻿@using AltWebsite.Models;
+@model IEnumerable<Booking>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="bookings-list container">
+
+    <div class="booking-head-line row">
+        <div class="col-sm-2">
+            @Html.DisplayNameFor(m => m.Tourist.FirstName)
+        </div>
+        <div class="col-sm-2">
+            @Html.DisplayNameFor(m => m.Tourist.Country)
+        </div>
+        <div class="col-sm-2">
+            @Html.DisplayNameFor(m => m.StartDate)
+        </div>
+        <div class="col-sm-2">
+            @Html.DisplayNameFor(m => m.EndDate)
+        </div>
+        <div class="col-sm-1">
+            @Html.DisplayNameFor(m => m.Payment.PricePerDay)
+        </div>
+        <div class="col-sm-1">
+            @Html.DisplayNameFor(m => m.Payment.TotalPrice)
+        </div>
+        <div class="col-sm-1">
+           Actions
+        </div>
+    </div>
+
+    @foreach (var item in Model)
+    {
+        <div class="booking-line row">
+            <div class="col-sm-2">
+                <a href="@Url.Action("Edit", "Tourist")">
+                    @Html.DisplayFor(m => item.Tourist.FirstName)   @Html.DisplayFor(m => item.Tourist.LastName)
+                </a>
+            </div>
+            <div class="col-sm-2">
+                @Html.DisplayFor(m => item.Tourist.Country)
+            </div>
+            <div class="col-sm-2">
+                @Html.DisplayFor(m => item.StartDate)
+            </div>
+            <div class="col-sm-2">
+                @Html.DisplayFor(m => item.EndDate)
+            </div>
+            <div class="col-sm-1">
+                @Html.DisplayFor(m => item.Payment.PricePerDay) €
+            </div>
+            <div class="col-sm-1">
+                @Html.DisplayFor(m => item.Payment.TotalPrice) €
+            </div>
+            <div class="col-sm-1">
+                @Html.ActionLink("Edit", "Edit", new { Id = item.Id })
+                @Html.ActionLink("Delete", "Delete", new { Id = item.Id })
+            </div>
+        </div>
+    }
+</div>

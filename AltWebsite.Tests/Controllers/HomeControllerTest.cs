@@ -16,7 +16,7 @@ namespace AltWebsite.Tests.Controllers
         public void Index()
         {
             // Arrange
-            HomeController controller = new HomeController();
+            BookingController controller = new BookingController();
 
             // Act
             ViewResult result = controller.Index() as ViewResult;
