@@ -1,0 +1,86 @@
+﻿@using AltWebsite.Models;
+@model IEnumerable<Booking>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<h4 class="page-title">
+    Bookings
+</h4>
+
+<div class="bookings-list container">
+
+    <div class="booking-head-line row">
+        <div class="col-sm-2">
+            Tourists
+        </div>
+        <div class="col-sm-2">
+            @Html.DisplayNameFor(m => m.Tourist.Country)
+        </div>
+        <div class="col-sm-1">
+            @Html.DisplayNameFor(m => m.StartDate)
+        </div>
+        <div class="col-sm-1">
+            @Html.DisplayNameFor(m => m.EndDate)
+        </div>
+        <div class="col-sm-1">
+            @Html.DisplayNameFor(m => m.Interval)
+        </div>
+        <div class="col-sm-1">
+            @Html.DisplayNameFor(m => m.Payment.PricePerDay)
+        </div>
+        <div class="col-sm-1">
+            @Html.DisplayNameFor(m => m.TotalPrice)
+        </div>
+        <div class="col-sm-1">
+            @Html.DisplayNameFor(m => m.Profit)
+        </div>
+        <div class="col-sm-1">
+            @Html.DisplayNameFor(m => m.Website)
+        </div>
+        <div class="col-sm-1">
+            Actions
+        </div>
+    </div>
+
+    @foreach (var item in Model)
+    {
+    <div class="booking-line row">
+        <div class="col-sm-2">
+            <a href="@Url.Action("EditTourist", "Bookings", new { id = item.Tourist.Id})">
+                @Html.DisplayFor(m => item.Tourist.FirstName)   @Html.DisplayFor(m => item.Tourist.LastName)
+            </a>
+        </div>
+        <div class="col-sm-2">
+            @Html.DisplayFor(m => item.Tourist.Country)
+        </div>
+        <div class="col-sm-1">
+            @Html.DisplayFor(m => item.StartDate)
+        </div>
+        <div class="col-sm-1">
+            @Html.DisplayFor(m => item.EndDate)
+        </div>
+        <div class="col-sm-1">
+            @Html.DisplayFor(m => item.Interval)
+        </div>
+        <div class="col-sm-1">
+            @Html.DisplayFor(m => item.Payment.PricePerDay) €
+        </div>
+        <div class="col-sm-1">
+            <a href="@Url.Action("EditPayment", "Bookings", new { id = item.PaymentId})">
+                @Html.DisplayFor(m => item.TotalPrice) €
+            </a>
+        </div>
+        <div class="col-sm-1">
+            @Html.DisplayFor(m => item.Profit) €
+        </div>
+        <div class="col-sm-1">
+            @Html.DisplayFor(m => item.Website)
+        </div>
+        <div class="col-sm-1">
+            @Html.ActionLink("Edit", "EditBooking", new { Id = item.Id })
+            @Html.ActionLink("Delete", "DeleteBooking", new { Id = item.Id })
+        </div>
+    </div>
+    }
+</div>

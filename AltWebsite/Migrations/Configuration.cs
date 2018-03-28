@@ -14,7 +14,7 @@ namespace AltWebsite.Migrations
             AutomaticMigrationsEnabled = true;
         }
 
-        protected override void Seed(AltWebsite.Models.AltWebsiteDb context)
+        protected override void Seed(AltWebsiteDb context)
         {
             //  This method will be called after migrating to the latest version.
 
@@ -54,21 +54,18 @@ namespace AltWebsite.Migrations
                     PricePerDay = 35,
                     CommisionFee = 10,
                     CleanupFee = 8,
-                    TotalPrice = 150
                 },
                  new Payment()
                 {
                     PricePerDay = 40,
                     CommisionFee = 10,
                     CleanupFee = 8,
-                    TotalPrice = 200
                 },
                   new Payment()
                 {
                     PricePerDay = 45,
                     CommisionFee = 10,
                     CleanupFee = 8,
-                    TotalPrice = 250
                 }
             };
 
@@ -107,6 +104,5 @@ namespace AltWebsite.Migrations
             context.Bookings.AddOrUpdate(bookings.ToArray());
             context.SaveChanges();
         }
-
     }
 }

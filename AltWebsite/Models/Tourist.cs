@@ -10,10 +10,10 @@ namespace AltWebsite.Models
     {
         public int Id { get; set; }
 
-        [DisplayName("Tourist")]
+        [DisplayName("First Name")]
         public string FirstName { get; set; }
 
-        [DisplayName("Tourist Name")]
+        [DisplayName("Last Name")]
         public string LastName { get; set; }
 
         [DisplayName("Country")]

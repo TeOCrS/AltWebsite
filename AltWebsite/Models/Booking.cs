@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
 
 namespace AltWebsite.Models
 {
@@ -24,7 +21,13 @@ namespace AltWebsite.Models
         public DateTime EndDate { get; set; }
 
         [DisplayName("Interval")]
-        public TimeSpan Interval { get; set; }
+        public double Interval => (EndDate - StartDate).TotalDays;
+
+        [DisplayName("Total Price")]
+        public double TotalPrice => Payment.PricePerDay * Interval + Payment.CleanupFee;
+
+        [DisplayName("Profit")]
+        public double Profit => TotalPrice - Payment.CommisionFee;
 
         [DisplayName("Booking website")]
         public ComingFromWebsite Website { get; set; }

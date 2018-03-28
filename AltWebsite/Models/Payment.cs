@@ -1,17 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Web;
+﻿using System.ComponentModel;
 
 namespace AltWebsite.Models
 {
     public class Payment
     {
         public int Id { get; set; }
-
-        [DisplayName("Total Price")]
-        public double TotalPrice { get; set; }
 
         [DisplayName("Price/ Day")]
         public double PricePerDay { get; set; }
@@ -21,8 +14,5 @@ namespace AltWebsite.Models
 
         [DisplayName("Clean up fee")]
         public double CleanupFee { get; set; }
-
-        [DisplayName("Profit")]
-        public double Profit { get; set; }
     }
 }

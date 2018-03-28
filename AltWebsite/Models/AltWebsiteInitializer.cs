@@ -40,21 +40,18 @@ namespace AltWebsite.Models
                     PricePerDay = 35,
                     CommisionFee = 10,
                     CleanupFee = 8,
-                    TotalPrice = 150
                 },
                  new Payment()
                 {
                     PricePerDay = 40,
                     CommisionFee = 10,
                     CleanupFee = 8,
-                    TotalPrice = 200
                 },
                   new Payment()
                 {
                     PricePerDay = 45,
                     CommisionFee = 10,
                     CleanupFee = 8,
-                    TotalPrice = 250
                 }
             };
 

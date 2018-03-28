@@ -16,10 +16,10 @@ namespace AltWebsite.Tests.Controllers
         public void Index()
         {
             // Arrange
-            BookingController controller = new BookingController();
+            BookingsController controller = new BookingsController();
 
             // Act
-            ViewResult result = controller.Index() as ViewResult;
+            ViewResult result = controller.Bookings() as ViewResult;
 
             // Assert
             Assert.IsNotNull(result);

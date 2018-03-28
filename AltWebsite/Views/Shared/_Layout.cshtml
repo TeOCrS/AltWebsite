@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>AltWebsite</title>
     @Styles.Render("~/Content/css")
     @Styles.Render("~/bundles/alt-website-style")
     @Scripts.Render("~/bundles/modernizr")
@@ -17,12 +17,12 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Alt Website", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Alt Website", "Bookings", "Bookings", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Bookings", "Index", "Booking")</li>
-                    <li>@Html.ActionLink("Create New", "Create", "Booking")</li>
+                    <li>@Html.ActionLink("Bookings", "Bookings", "Bookings")</li>
+                    <li>@Html.ActionLink("Create New", "Create", "Bookings")</li>
                 </ul>
             </div>
         </div>
